@@ -1,0 +1,117 @@
+{% include "User/base.html" %}
+<head>
+    <style>
+        .highlighted {
+            background: linear-gradient(to right, rgba(2, 41, 63, 0.829), rgba(83, 182, 228, 0.692));
+            text-emphasis-color: black;
+            color:#7eb3e4;
+            font-size: medium;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <h2> {{ user_name }} information: </h2>
+
+    <br>
+    <div style="width: max-content">
+        {%if user_ava %}
+        <img src="{{ user_ava }}" alt="User Avatar" width="200" height="200">
+        {%  endif   %}
+        <p  class="highlighted">
+        {%if user_k %}
+        Karma is: {{user_k }}
+        {%else%}
+        User Karma Option Wasn't Selected
+        {% endif %}
+        </p>
+      </div>
+      <div style="clear: both;"></div>
+      
+    <p  class="highlighted">
+    <br>
+        {% if user_ACT %}
+    Activity Level is:    {{  user_ACT   }}
+    {%else%}
+    User Activity Level Wasn't Selected
+    {%endif%}
+    </p>
+
+    <p  class="highlighted">
+    <br>
+    {% if user_sbl %}
+    User Most Used Subreddits Consist of:  {{user_sbl}}
+    {%else%}
+    User Most Common Subreddits Wasn't Selected
+    {%endif%}
+    </p>
+
+    <p  class="highlighted">
+        <br>
+        {% if user_dc %}
+          This Account was Created on:  {{ user_dc }}
+          {%else%}
+          User Account Creation Date Wasn't Selected
+          {%endif%}
+    </p>
+        
+
+    
+    <p  class="highlighted">
+        <br>
+        {% if user_mon_stat %}
+    This User Posted: {{user_mon_stat}} times this month.
+    {%else%}
+    User Monthly Posts Wasn't Selected or Not Enough Data on User
+    {%endif%}
+    </p>
+
+    
+    <p  class="highlighted">
+    <br>
+        {% if user_mon_stat %}
+    This user commented: {{user_com_stat}} times this month.
+    {%else%}
+    User Monthly Comments Wasn't Selected or Not Enough Data on User
+    {%endif%}
+
+    <p  class="highlighted">
+    <br>
+        {% if user_avg_com %}
+    The average likes per comment is: {{user_avg_com}}
+    {%else%}
+    User Average likes per Comment Wasn't Selected or Not Enough Data on User
+    {% endif %}
+    </p>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

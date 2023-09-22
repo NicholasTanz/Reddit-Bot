@@ -1,0 +1,20 @@
+{% include "User/base.html" %}
+<head>
+    <style>
+        label {
+            color: black;
+        }
+    </style>
+
+</head>
+
+<p> Enter a Subreddit to Query: </p>
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    
+    <input type="Submit" value="Submit">
+</form>
+
+

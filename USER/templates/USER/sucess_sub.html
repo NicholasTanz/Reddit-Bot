@@ -1,0 +1,89 @@
+{% include "User/base.html" %}
+
+
+
+<head>
+    <style>
+        :root{
+
+            --color_one: {{ subr_rgb1 }};
+            --color_two: {{subr_rgb2}};
+        }
+        #logo-bg{
+            background: linear-gradient(to right, var(--color_one), var(--color_two));
+        }
+
+    </style>
+    <style>
+            .highlighted {
+                background: linear-gradient(to right, rgba(2, 41, 63, 0.829), rgba(83, 182, 228, 0.692));
+                text-emphasis-color: black;
+                color:#7eb3e4;
+                font-size: medium;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+    
+    
+    </style>
+
+</head>
+
+
+<body>
+    
+    <div id="logo-bg">
+    {%if subr_lg %}
+    <img src="{{ subr_lg }}" height="85", width="35"> 
+    {%endif%}
+    </div>
+
+    <p class="highlighted">
+    <br>
+    {%if subr_sub %}
+    The total number of members in this subreddit is: {{ subr_sub }}
+    {%else%}
+    Subreddit Total Subscribers Not Selected
+    {%endif%}
+    </p>
+
+
+    <p class="highlighted">
+    <br>
+        {%if subr_onl %}
+    The current number of online users is: {{ subr_onl}}
+    {%else%}
+    Subreddit Online Users Wasn't Selected
+    {%endif%}
+    </p>
+
+    
+    <p class="highlighted">
+    <br>
+    {%if subr_cmn_fl %}
+    Here are the flairs used with posts on this subreddit: {{ subr_cmn_fl}}
+    {%else%}
+    Subreddit Most Common Post Flairs Wasn't Selected
+    {%endif%}
+    </p>
+
+    
+    <p class="highlighted">
+    <br>
+    {%if subr_wk_sb %}
+        This subreddit had: {{subr_wk_sb}} submissions in the last week
+    {%else%}
+    Subreddit Monthly Submissions Not Selected
+        {%endif%}
+    </p>
+
+    <p class="highlighted">
+    <br>
+        {% if subr_dc %}
+    This Subreddit was created on: {{ subr_dc }}
+    {%else%}
+    Subreddit Creation Date Wasn't Selected
+    {%endif%}
+    </p>
+
+
+</body>
